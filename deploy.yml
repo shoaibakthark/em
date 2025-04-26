@@ -18,6 +18,6 @@
 
     - name: Copy custom index.html
       copy:
-        src: ../index.html
-        dest: /usr/share/nginx/html/index.html
+        src: finexo-html
+        dest: /usr/share/nginx/html/
         mode: '0644'
