@@ -1,14 +1,16 @@
 ---
 - name: Deploy Web App
   hosts: all
+  gather_facts: no
   become: yes
+  vars:
+    ansible_ssh_extra_args: "-o StrictHostKeyChecking=no"
   tasks:
     - name: Install Nginx
       apt:
         name: nginx
         state: present
         update_cache: yes
-
     - name: Copy custom index.html
       copy:
         src: ../index.html
